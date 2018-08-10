@@ -20,8 +20,15 @@ php7.2-tidy \
 php7.2-xml \
 php7.2-curl \
 php7.2-gd \
+php7.2-mbstring \
 nginx \
 mysql-client
 
 RUN apt-get install -y --no-install-recommends apt-utils
+
+# コンテナ内でcomposerを使えるようにする
+RUN curl -s https://getcomposer.org/installer | php
+RUN mv composer.phar /usr/local/bin/composer
+
+
 CMD ["/usr/sbin/nginx", "-g", "daemon off;"]
