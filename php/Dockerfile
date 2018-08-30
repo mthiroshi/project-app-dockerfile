@@ -32,3 +32,4 @@ RUN mv composer.phar /usr/local/bin/composer
 
 
 CMD ["/usr/sbin/nginx", "-g", "daemon off;"]
+RUN service service php7.2-fpm start
