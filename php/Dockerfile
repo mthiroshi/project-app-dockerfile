@@ -29,7 +29,10 @@ RUN apt-get install -y --no-install-recommends apt-utils
 # コンテナ内でcomposerを使えるようにする
 RUN curl -s https://getcomposer.org/installer | php
 RUN mv composer.phar /usr/local/bin/composer
-
-
 CMD ["/usr/sbin/nginx", "-g", "daemon off;"]
-RUN service service php7.2-fpm start
+
+# 必要なスクリプトを実行 TODO:まあ動かんけどなｗ
+# COPY docker-entrypoint.sh /usr/local/bin
+# RUN chmod 777 /usr/local/bin/docker-entrypoint.sh
+# ENTRYPOINT ["docker-entrypoint.sh"]
+# CMD ["/bin/bash"]
