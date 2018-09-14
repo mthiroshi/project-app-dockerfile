@@ -1,5 +1,6 @@
 FROM ubuntu:18.04
 ENV DEBIAN_FRONTEND noninteractive
+ENV COMPOSER_ALLOW_SUPERUSER 1
 WORKDIR /root
 RUN apt-get update && \
 apt-get -y upgrade && \
