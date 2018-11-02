@@ -4,13 +4,13 @@ namespace App\Http\Controllers;
 
 use Laravel\Lumen\Routing\Controller as BaseController;
 use Illuminate\Http\Request;
+use App\Models\Content;
 
 class ContentController extends BaseController
 {
     public function index(Request $request)
     {
-        return [
-            //TODO:コンテンツ詳細を返す
-        ];
+        $content = Content::getContent();
+        return $content;
     }
 }
